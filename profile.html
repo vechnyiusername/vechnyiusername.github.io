@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://4kwallpapers.com/images/walls/thumbs_3t/5661.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-content {
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.85);
+            /* Clean white background with slight transparency */
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 60px auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            /* Adds depth to the main card */
+        }
+
+        .profile-section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
+
+        }
+
+        .profile-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group input[type="file"] {
+            border: none;
+            padding: 0;
+        }
+
+        .btn-primary {
+            padding: 10px 20px;
+            background-color: #C1AA7F;
+            border: none;
+            border-radius: 4px;
+            color: #ffffff;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #a8906c;
+        }
+
+        .footer-bg {
+            text-align: center;
+            padding: 20px;
+            background-color: #C1AA7F;
+            color: #ffffff;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        #profile-section {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/icon.png" alt="Logo" class="me-2" style="width: 40px; height: auto;">
+                The Travel Explorer
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul id="navMenu" class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" tabindex="0"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item" tabindex="0"><a class="nav-link" href="destinations.html">Destinations</a></li>
+                    <li class="nav-item" tabindex="0"><a class="nav-link" href="tours.html">Tours</a></li>
+                    <li class="nav-item" tabindex="0"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item" tabindex="0"><a class="nav-link" href="about_us.html">About us</a></li>
+                    <li class="nav-item" tabindex="0"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item" tabindex="0"><a class="nav-link" href="test valid.html">Sign up</a></li>
+                    <li class="nav-item" tabindex="0"><a class="nav-link" href="authorize.html">Log in</a></li>
+                    <!-- Profile Section -->
+                    <li id="profileSection" class="nav-item hidden">
+                        <a id="profileLink" class="nav-link" href="profile.html">
+                            <img src="https://icons.veryicon.com/png/o/miscellaneous/two-color-webpage-small-icon/user-244.png"
+                                alt="Profile Icon" style="width: 30px; height: auto;">
+                            <span id="userEmail"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="main-content">
+        <div id="profile-section" class="profile-section">
+            <h2>My Profile</h2>
+            <form id="profile-form">
+                <!-- Name -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <!-- Age -->
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" placeholder="Enter your age" min="0" max="120" required>
+                </div>
+
+                <!-- Profile Photo -->
+                <div class="form-group">
+                    <label for="profile-photo">Profile Photo</label>
+                    <input type="file" id="profile-photo" name="profile-photo" accept="image/*">
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <!-- About Myself -->
+                <div class="form-group">
+                    <label for="about">About Myself</label>
+                    <textarea id="about" name="about" rows="4"
+                        placeholder="Tell us something about yourself..."></textarea>
+                </div>
+
+                <!-- Countries Visited -->
+                <div class="form-group">
+                    <label for="countries">Countries Visited</label>
+                    <textarea id="countries" name="countries" rows="3"
+                        placeholder="List the countries you have visited..."></textarea>
+                </div>
+
+                <!-- Feedback -->
+                <div class="form-group">
+                    <label for="feedback">Feedback</label>
+                    <textarea id="feedback" name="feedback" rows="4"
+                        placeholder="Share your feedback about your travels..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-primary">Save Profile</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer-bg">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('profile-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Your profile has been updated successfully!');
+        });
+    </script>
+</body>
+
+</html>
